@@ -45,3 +45,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+#
+Cw6_2/Assets/
+Cw6_2/bin/
+Cw6_2/obj/
+obj/
+.vs
+
