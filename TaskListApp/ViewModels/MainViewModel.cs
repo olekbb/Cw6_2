@@ -1,11 +1,10 @@
-﻿using Cw6_2.Commands;
-using Cw6_2;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 using System.ComponentModel;
+using System.Windows.Input;
+using TaskListApp.Commands;
 
-namespace Cw6_2.ViewModels
+namespace TaskListApp.ViewModels
 {
     public class MainViewModel : ViewModel
     {
@@ -35,7 +34,7 @@ namespace Cw6_2.ViewModels
                 OnPropertyChanged("Value");
             }
         }
-        private ObservableCollection<ToDoTask> itemsCollection;
+        private ObservableCollection<ToDoTask> itemsCollection = new ObservableCollection<ToDoTask>();
         public ObservableCollection<ToDoTask> ItemsCollection
         {
             get
@@ -45,9 +44,7 @@ namespace Cw6_2.ViewModels
             set
             {
                 itemsCollection = value;
-
-               // RaisePropertyChanged("ItemsCollection");
-                //OnPropertyChanged("ItemsCollection");
+                OnPropertyChanged("ItemsCollection");
             }
         }
 
@@ -57,7 +54,6 @@ namespace Cw6_2.ViewModels
 
         public MainViewModel()
         {
-            ItemsCollection = new ObservableCollection<ToDoTask>();
             ItemsCollection.Add(new ToDoTask("task1", "opis"));
             ItemsCollection.Add(new ToDoTask("task2", "opis"));
             ItemsCollection.Add(new ToDoTask("task3", "opis"));
@@ -73,24 +69,11 @@ namespace Cw6_2.ViewModels
         private void AddElement()
         {
             ItemsCollection.Add(new ToDoTask(Title, Value));
-
-            //OnPropertyChanged("ItemsCollection");
-            RaisePropertyChanged("ItemsCollection");
         }
 
         private void OnClick()
         {
             Title = "Time: " + DateTime.Now.Ticks;
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void RaisePropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Cw6_2.Commands
+namespace TaskListApp.Commands
 {
     public class ActionCommand : ICommand
     {

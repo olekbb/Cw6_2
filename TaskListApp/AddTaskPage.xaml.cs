@@ -1,9 +1,9 @@
-﻿using Cw6_2.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TaskListApp.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -14,24 +14,24 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Cw6_2
+namespace TaskListApp
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class AddTaskPage : Page
     {
-        public MainPage()
+        public AddTaskPage()
         {
             this.InitializeComponent();
             DataContext = new MainViewModel();
         }
-        private void GoToPage(object sender, RoutedEventArgs e)
+
+        private void Cancel(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Page1));
-            //MyFrame.Navigate(typeof(Page1));
+            this.Frame.GoBack();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Cw6_2;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,11 +16,10 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Cw6_2
-{
-    /// <summary>
-    /// Provides application-specific behavior to supplement the default Application class.
-    /// </summary>
+namespace TaskListApp { 
+      /// <summary>
+      /// Provides application-specific behavior to supplement the default Application class.
+      /// </summary>
     sealed partial class App : Application
     {
         /// <summary>
@@ -42,12 +40,12 @@ namespace Cw6_2
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
-#if DEBUG
+    #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
-#endif
+    #endif
 
             Frame rootFrame = Window.Current.Content as Frame;
 

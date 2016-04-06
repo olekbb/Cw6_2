@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Cw6_2.ViewModels
+namespace TaskListApp.ViewModels
 {
     public class ViewModel : INotifyPropertyChanged
     {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Cw6_2.Commands
+namespace TaskListApp.Commands
 {
     public class RelayCommand : ICommand
     {

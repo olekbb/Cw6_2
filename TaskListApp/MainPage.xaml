@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="TaskListApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TaskListApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--  <Frame Name="MyFrame"> -->
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!-- 
+        <TextBlock Text="{Binding Title}" 
+                   FontSize="24"/>
+        <TextBox Text="{Binding Title, Mode=TwoWay}"/> 
+        <Button Content="Change title"
+                Command="{Binding ClickCommand}" /> 
+        -->
+
+        <ListBox ItemsSource="{Binding ItemsCollection}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Title}" FontSize="28"/>
+                        <TextBlock Text="{Binding Value}" FontSize="24"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+        <Button Content="Add task"
+                Click="GoToPage"/>
+        <Button Content="PersistentTextPage"
+                Click="GoToPage2"/>
+    </StackPanel>
+    <!-- </Frame> -->
+</Page>
