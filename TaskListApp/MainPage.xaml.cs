@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using TaskListApp.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -23,10 +22,11 @@ namespace TaskListApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = ((App)App.Current).MyViewModelLocator.getViewModel();
         }
         private void GoToPage(object sender, RoutedEventArgs e)
         {

@@ -7,7 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="{Binding Text}"></TextBlock>
-    </Grid>
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Content="SaveLocalSettings"
+                Click="OnLocalSettingsClick"/>
+        <Button Content="LoadLocalSettings"
+                Click="OnLoadLocalSettingsClick" />
+        <Button Content="Serilize"
+                Click="OnSerializeClick" />
+    </StackPanel>
 </Page>

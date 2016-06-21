@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <!--  <Frame Name="MyFrame"> -->
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <!-- 
         <TextBlock Text="{Binding Title}" 
                    FontSize="24"/>
@@ -16,7 +16,11 @@
         <Button Content="Change title"
                 Command="{Binding ClickCommand}" /> 
         -->
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         <ListBox ItemsSource="{Binding ItemsCollection}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -29,9 +33,11 @@
 
         </ListBox>
         <Button Content="Add task"
-                Click="GoToPage"/>
+                Click="GoToPage"
+                Grid.Row="1"/>
         <Button Content="PersistentTextPage"
-                Click="GoToPage2"/>
-    </StackPanel>
+                Click="GoToPage2"
+                Grid.Row="2"/>
+    </Grid>
     <!-- </Frame> -->
 </Page>

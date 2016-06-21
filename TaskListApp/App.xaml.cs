@@ -22,6 +22,7 @@ namespace TaskListApp {
       /// </summary>
     sealed partial class App : Application
     {
+        public ViewModelLocator MyViewModelLocator;
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -30,6 +31,7 @@ namespace TaskListApp {
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            MyViewModelLocator = new ViewModelLocator();
         }
 
         /// <summary>
@@ -82,7 +84,7 @@ namespace TaskListApp {
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                rootFrame.Navigate(typeof(PersistentTextPage), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();

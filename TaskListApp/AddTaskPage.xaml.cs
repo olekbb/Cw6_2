@@ -26,7 +26,7 @@ namespace TaskListApp
         public AddTaskPage()
         {
             this.InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = ((App)App.Current).MyViewModelLocator.getViewModel();
         }
 
         private void Cancel(object sender, RoutedEventArgs e)

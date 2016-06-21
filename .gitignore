@@ -52,4 +52,6 @@ Cw6_2/bin/
 Cw6_2/obj/
 obj/
 .vs
-
+/TaskListApp/Assets/
+/TaskListApp/bin/
+/TaskListApp/obj/
